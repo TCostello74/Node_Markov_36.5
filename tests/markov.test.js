@@ -9,7 +9,22 @@ const MarkovMachine = require('../markov');
     let mm = new MarkovMachine("the cat in the hat");
     let text = mm.makeText(5);
     let words = text.split(' ');
+  
     expect(words.length).toBeLessThanOrEqual(5);
-    
+  
+    for (let i = 0; i < words.length - 1; i++) {
+      let word = words[i];
+      let nextWord = words[i + 1];
+      let possibleNextWords = mm.chains[word];
+  
+      // Check that nextWord is a possible 'next word' for the current word
+      expect(possibleNextWords).toContain(nextWord);
+    }
   });
+  
+  
+  
+  
+  
+  
   

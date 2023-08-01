@@ -10,6 +10,6 @@ const MarkovMachine = require('../markov');
     let text = mm.makeText(5);
     let words = text.split(' ');
     expect(words.length).toBeLessThanOrEqual(5);
-    // Additional tests as necessary...
+    
   });
   
